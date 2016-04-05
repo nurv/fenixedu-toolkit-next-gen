@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/js/toolkit.js"],"names":[],"mappings":";;;;;;;AAAA,UAAI,EAAJ;;yBACa,UAAU","file":"toolkit.js","sourcesContent":["a = \"\"\nexport const VERSION = \"alpha\";\n\n"]}

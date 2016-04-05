@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" href="/canvas.css">
+    <script src="/bootstrap.js"></script>
+    <script src="node_modules/es6-collections/es6-collections.js"></script>
+    <script src="node_modules/es6-module-loader/dist/es6-module-loader.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/webcomponents.js/webcomponents.js"></script>
+    <script type="text/javascript">
+      Object.assign || function (target, source) {
+        var from;
+        var to = toObject(target);
+        var symbols;
+
+        for (var s = 1; s < arguments.length; s++) {
+          from = Object(arguments[s]);
+
+          for (var key in from) {
+            if (hasOwnProperty.call(from, key)) {
+              to[key] = from[key];
+            }
+          }
+
+          if (Object.getOwnPropertySymbols) {
+            symbols = Object.getOwnPropertySymbols(from);
+            for (var i = 0; i < symbols.length; i++) {
+              if (propIsEnumerable.call(from, symbols[i])) {
+                to[symbols[i]] = from[symbols[i]];
+              }
+            }
+          }
+        }
+
+        return to;
+      };
+
+      System.defaultJSExtensions = true;
+      System.config({
+        baseURL: '/dist/js',
+        defaultExtension: 'js'
+      });
+      System.import("toolkit/ui/localizedString");
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>FenixEdu Toolkit</h1>
+        </div>
+      </div>
+      <div class="row">
+        <form action="" method="post">
+        <input is="ls-input" name="xxx" value='{"en-GB":"About nurv", "pt-PT":"Acerca de nurv"}' />
+
+        <textarea is="ls-textarea" name="xxx2">{"en-GB":"About nurv", "pt-PT":"Acerca de nurv"}</textarea>
+        <button>submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
